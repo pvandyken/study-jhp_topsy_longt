@@ -1,0 +1,14 @@
+age:
+  file: sessions.tsv
+saps_mean:
+  file: symptom_summaries.tsv
+sans_mean:
+  file: symptom_summaries.tsv
+saps_slope:
+  file: symptom_summaries.tsv
+sans_slope:
+  file: symptom_summaries.tsv
+saps_intercept:
+  file: symptom_summaries.tsv
+sans_intercept:
+  file: symptom_summaries.tsv

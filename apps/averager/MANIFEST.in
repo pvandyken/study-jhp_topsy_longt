@@ -1,0 +1,5 @@
+include averager/**/*.yaml
+include averager/**/*.yml
+include averager/**/*.json
+include averager/**/Snakefile
+include averager/**/*.smk

@@ -1,0 +1,72 @@
+bids_dir: /path/to/bids_dir
+output_dir: /path/to/output_dir
+debug: false
+derivatives: false
+analysis_levels: &id001
+- participant
+targets_by_analysis_level:
+  participant:
+  - ''
+pybids_inputs:
+  volume:
+    filters:
+      scope: templategen
+      suffix: mdp
+    wildcards:
+    - subject
+    - session
+    - desc
+    - datatype
+    - suffix
+  connectome:
+    filters:
+      scope: snaketract
+      suffix: connectome
+      atlas: bn246
+      space: T1w
+    wildcards:
+    - subject
+    - session
+    - desc
+    - datatype
+    - suffix
+parse_args:
+  bids_dir:
+    help: The directory with the input dataset formatted according to the BIDS standard.
+  output_dir:
+    help: The directory where the output files should be stored. If you are running
+      group level analysis this folder should be prepopulated with the results of
+      the participant level analysis.
+  analysis_level:
+    help: Level of the analysis that will be performed.
+    choices: *id001
+  --participant-label:
+    help: The label(s) of the participant(s) that should be analyzed. The label corresponds
+      to sub-<participant_label> from the BIDS spec (so it does not include "sub-").
+      If this parameter is not provided all subjects should be analyzed. Multiple
+      participants can be specified with a space separated list.
+    nargs: +
+  --exclude-participant-label:
+    help: The label(s) of the participant(s) that should be excluded. The label corresponds
+      to sub-<participant_label> from the BIDS spec (so it does not include "sub-").
+      If this parameter is not provided all subjects should be analyzed. Multiple
+      participants can be specified with a space separated list.
+    nargs: +
+  --derivatives:
+    help: 'Path(s) to a derivatives dataset, for folder(s) that contains multiple
+      derivatives datasets (default: %(default)s) '
+    default:
+    nargs: '*'
+  --groupby:
+    help: wildcards to group over (i.e. left intact in output files)
+    default: []
+    nargs: +
+  --skip-bids-validation:
+    help: Skip validation of BIDS dataset. BIDS validation is performed by default
+      using the bids-validator plugin (if installed/enabled) or with the pybids validator
+      implementation (if bids-validator is not installed/enabled).
+    dest: plugins.validator.skip
+    action: store_true
+    default: false
+singularity:
+  mrtrix: docker://mrtrix3/mrtrix3:3.0.3

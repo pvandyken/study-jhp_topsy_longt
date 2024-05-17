@@ -1,0 +1,66 @@
+age:
+  file: sessions
+  field: age
+HandednessTotal:
+  file: handedness
+  field: HandednessTotal
+education:
+  file: sessions
+  field: education
+SES:
+  file: ses
+  field: SES
+CAST:
+  file: suq
+  field: CAST_total
+AUDIT-C:
+  file: suq
+  field: AUDIT_C_total
+smoker:
+  file: suq
+  field: Smoker
+  map:
+    1: "yes"
+    2: "no"
+Smoking_Index:
+  file: suq
+  field: Smoking_Index
+Cannabis:
+  file: suq
+  field: Cannabis
+  map:
+    1: "yes"
+    2: "no"
+DUP:
+  file: history
+  field: dup_weeks
+DUI:
+  file: history
+  field: dui_weeks
+ddd_lifetime:
+  file: rx
+  field: ddd_lifetime
+ddd_dayofscan:
+  file: rx
+  field: ddd_dayofscan
+SOFAS:
+  file: sessions
+  field: SOFAS
+PANSSTOTAL:
+  file: panss
+  field: panss-total
+PANSSN:
+  file: panss
+  field: panss8-n
+PANSSP:
+  file: panss
+  field: panss8-p
+PANSSG:
+  file: panss
+  field: panss8-g
+time:
+  file: sessions
+  field: days_since_first_scan
+ddx:
+  file: history
+  field: ConsensusDx

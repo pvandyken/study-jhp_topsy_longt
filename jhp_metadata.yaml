@@ -1,0 +1,9 @@
+age:
+  file: sessions
+  field: age
+sans:
+  file: sessions
+  field: sans_total
+saps:
+  file: sessions
+  field: saps_total

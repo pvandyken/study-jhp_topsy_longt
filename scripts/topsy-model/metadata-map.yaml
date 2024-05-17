@@ -1,0 +1,16 @@
+age:
+  file: sessions.tsv
+PANSSP_recov:
+  file: symptom_summaries.tsv
+  field: PANSSP_recovery
+PANSSN_recov:
+  file: symptom_summaries.tsv
+  field: PANSSN_recovery
+PANSSP_intercept:
+  file: symptom_summaries.tsv
+PANSSN_intercept:
+  file: symptom_summaries.tsv
+PANSSP_slope:
+  file: symptom_summaries.tsv
+PANSSN_slope:
+  file: symptom_summaries.tsv

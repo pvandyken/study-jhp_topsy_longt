@@ -1,0 +1,80 @@
+make_model: !()
+    model: !? $.model
+    component: !? $.get(component, fa)
+    desc: !? format("{}{}{}", $.param, $.score.toLower().substring(-2, 1), $.term)
+    filter-participants:
+      - num_sessions 2 3 4
+
+    !if $.model = "tbss":
+      args: >-
+        --skip-nan
+      filters:
+        fa:
+          scope: averager
+        !if $.param != "FA":
+          param_map:
+            scope: averager
+            suffix: mdp
+            extension: .nii.gz
+            desc: !? switch($.param = "AD" => "L1", true => $.param)
+    !if $.model = "nbs":
+      args: >-
+        --skip-nan
+      filters:
+        connectome:
+          scope: averager
+          desc: !? switch($.param = "AD" => "avgL1", true => format("avg{}", $.param))
+
+    test_col: !- format("{}_{}", $.score, $.term)
+
+    contrast_term:
+      !- switch(
+        $.term = "recov" => format("{}[T.True]", $this.test_col),
+        true => $this.test_col
+      )
+
+    design: !? format("{} + sex + age", $this.test_col)
+    alternative:
+      !- switch($.param = "FA" => -1, true => 1) *
+         switch($.term = "recov" => -1, true => 1)
+    !if $this.alternative = -1:
+      ttests:
+        - test: !? format("- {}", $this.contrast_term)
+          name: "neg"
+    !if $this.alternative = 1:
+      ttests:
+        - test: !? $this.contrast_term
+          name: pos
+
+params: !-
+  - FA
+  - MD
+  - AD
+  - RD
+
+models: !()
+  - !? $.mergeWith({model => tbss })
+
+scores: !()
+  - !? $.mergeWith({score => saps})
+  - !? $.mergeWith({score => sans})
+
+terms: !()
+  - !? $.mergeWith({term => mean})
+  - !? $.mergeWith({term => intercept})
+  - !? $.mergeWith({term => slope})
+  
+config:
+  !- $_.params
+     .select({param => $})
+     .selectMany(($_.terms)($))
+     .selectMany(($_.scores)($))
+     .selectMany(($_.models)($))
+  
+
+? !for .config
+: !()
+  ? !? format("{}_{}_{}_{}", $.model, $.param.toLower(), $.score.toLower(), $.term)
+  :
+    !? ($_.make_model)($)
+

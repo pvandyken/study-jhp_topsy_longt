@@ -1,0 +1,66 @@
+from snakebids import bids, generate_inputs, get_wildcard_constraints
+import numpy as np
+
+configfile: 'config/snakebids.yml'
+
+# Get input wildcards
+inputs = generate_inputs(
+    bids_dir=config["bids_dir"],
+    pybids_inputs=config["pybids_inputs"],
+    pybidsdb_dir=config.get("pybidsdb_dir"),
+    pybidsdb_reset=config.get("pybidsdb_reset"),
+    derivatives=config.get("derivatives", None),
+    participant_label=config.get("participant_label", None),
+    exclude_participant_label=config.get("exclude_participant_label", None),
+    validate=not config.get("plugins.validator.skip", False)
+)
+
+rule avg_volume:
+    input: lambda wcards: inputs["volume"].filter(**wcards).expand()
+    output:
+        bids(
+            config["output_dir"],
+            extension=".nii.gz",
+            **inputs["volume"].wildcards[tuple(config["groupby"])],
+        )
+    container: config["singularity"]["mrtrix"]
+    params:
+        ninputs=lambda wcards, input: len(input)
+    shell:
+        """
+        if [[ {params.ninputs} -gt 1 ]]; then
+            mrmath {input} mean {output}
+        else
+            cp {input} {output}
+        fi
+        """
+
+targets = [inputs["volume"][tuple(config["groupby"])].expand(rules.avg_volume.output)]
+
+if "connectome" in inputs:
+    rule avg_connectome:
+        input: lambda wcards: inputs["connectome"].filter(**wcards).expand()
+        output:
+            bids(
+                config["output_dir"],
+                extension=".csv",
+                **inputs["connectome"].wildcards[tuple(config["groupby"])],
+            )
+        run:
+            np.savetxt(
+                output[0],
+                np.mean([np.loadtxt(i, delimiter=",") for i in input], axis=0),
+                delimiter=",",
+            )
+
+    targets.append(
+        inputs["connectome"][tuple(config["groupby"])].expand(
+            rules.avg_connectome.output
+        )
+
+    )
+
+rule all:
+    input: 
+        *targets
+    default_target: True

@@ -1,0 +1,74 @@
+index,name,x,y,z,label,group,region,hierarchy,atlas_id
+0,Unclassified,0,0,0,,unclassified,Unclassified,2,0
+1,Posterior Lobe,,,,PL,peripheral,Posterior Lobe,2,1
+2,Medulla,,,,Med,peripheral,Medulla,2,2
+3,Temporal Lobe,,,,TL,peripheral,Temporal Lobe,2,3
+4,Limbic Lobe,,,,LL,peripheral,Limbic Lobe,2,4
+5,Frontal Lobe,,,,FL,peripheral,Frontal Lobe,2,5
+6,Sub-lobar,,,,SL,peripheral,Sub-lobar,2,6
+7,Pons,,,,Po,peripheral,Pons,2,7
+8,Anterior Lobe,,,,AL,peripheral,Anterior Lobe,2,8
+9,Occipital Lobe,,,,OL,peripheral,Occipital Lobe,2,9
+10,Midbrain,,,,Mb,peripheral,Midbrain,2,10
+11,Frontal-Temporal Space,,,,FTS,peripheral,Frontal-Temporal Space,2,11
+12,Parietal Lobe,,,,PL,peripheral,Parietal Lobe,2,12
+13,Unclassified,0,0,0,,unclassified,Unclassified,3,0
+14,Middle cerebellar peduncle,69,83,36,MCP,cerebellar,Middle cerebellar peduncle,3,1
+15,Pontine crossing tract (a part of MCP),89,97,40,PCT,projection,Pontine crossing tract,3,2
+16,Genu of corpus callosum,93,152,77,GCC,callosal,CC Genu,3,3
+17,Body of corpus callosum,95,100,97,BCC,callosal,CC Body,3,4
+18,Splenium of corpus callosum,85,89,88,SCC,callosal,CC Splenium,3,5
+19,Fornix (column and body of fornix),89,116,88,FX,limbic,Fornix,3,6
+20,Corticospinal tract R,82,103,43,CST,projection,Corticospinal tract,3,7
+21,Corticospinal tract L,97,103,43,CST,projection,Corticospinal tract,3,8
+22,Medial lemniscus R,84,89,40,ML,projection,Medial lemniscus,3,9
+23,Medial lemniscus L,95,89,40,ML,projection,Medial lemniscus,3,10
+24,Inferior cerebellar peduncle R,83,83,20,ICP,cerebellar,Inferior cerebellar peduncle,3,11
+25,Inferior cerebellar peduncle L,96,83,20,ICP,cerebellar,Inferior cerebellar peduncle,3,12
+26,Superior cerebellar peduncle R,84,93,53,SCP,cerebellar,Superior cerebellar peduncle,3,13
+27,Superior cerebellar peduncle L,95,93,53,SCP,cerebellar,Superior cerebellar peduncle,3,14
+28,Cerebral peduncle R,75,107,60,CP,projection,Cerebral peduncle,3,15
+29,Cerebral peduncle L,104,107,60,CP,projection,Cerebral peduncle,3,16
+30,Anterior limb of internal capsule R,75,129,79,ALIC,projection,IC Anterior Limb,3,17
+31,Anterior limb of internal capsule L,104,129,79,ALIC,projection,IC Anterior Limb,3,18
+32,Posterior limb of internal capsule R,66,108,85,PLIC,projection,IC Posterior Limb,3,19
+33,Posterior limb of internal capsule L,113,108,85,PLIC,projection,IC Posterior Limb,3,20
+34,Retrolenticular part of internal capsule R,61,101,78,RLIC,projection,IC Retrolenticular,3,21
+35,Retrolenticular part of internal capsule L,117,101,78,RLIC,projection,IC Retrolenticular,3,22
+36,Anterior corona radiata R,69,163,73,ACR,projection,Anterior corona radiata,3,23
+37,Anterior corona radiata L,110,163,73,ACR,projection,Anterior corona radiata,3,24
+38,Superior corona radiata R,63,109,96,SCR,projection,Superior corona radiata,3,25
+39,Superior corona radiata L,116,109,96,SCR,projection,Superior corona radiata,3,26
+40,Posterior corona radiata R,64,99,99,PCR,projection,Posterior corona radiata,3,27
+41,Posterior corona radiata L,115,99,99,PCR,projection,Posterior corona radiata,3,28
+42,Posterior thalamic radiation (include optic radiation) R,57,64,73,PTR,projection,Posterior thalamic radiation,3,29
+43,Posterior thalamic radiation (include optic radiation) L,122,64,73,PTR,projection,Posterior thalamic radiation,3,30
+44,Sagittal stratum (include inferior longitidinal fasciculus and inferior fronto-occipital fasciculus) R,48,97,60,SS,association,Sagittal stratum,3,31
+45,Sagittal stratum (include inferior longitidinal fasciculus and inferior fronto-occipital fasciculus) L,131,97,60,SS,association,Sagittal stratum,3,32
+46,External capsule R,58,131,64,EC,association,External capsule,3,33
+47,External capsule L,121,131,64,EC,association,External capsule,3,34
+48,Cingulum (cingulate gyrus) R,83,132,105,CGC,limbic,Cingulate gyrus,3,35
+49,Cingulum (cingulate gyrus) L,97,110,108,CGC,limbic,Cingulate gyrus,3,36
+50,Cingulum (hippocampus) R,66,101,53,CGH,limbic,Hippocampus,3,37
+51,Cingulum (hippocampus) L,112,99,54,CGH,limbic,Hippocampus,3,38
+52,Fornix (cres) / Stria terminalis (can not be resolved with current resolution) R,62,100,66,FXST,limbic,Fornix (cres),3,39
+53,Fornix (cres) / Stria terminalis (can not be resolved with current resolution) L,117,100,66,FXST,limbic,Fornix (cres),3,40
+54,Superior longitudinal fasciculus R,53,103,102,SLF,association,Superior longitudinal fasciculus,3,41
+55,Superior longitudinal fasciculus L,126,103,102,SLF,association,Superior longitudinal fasciculus,3,42
+56,Superior fronto-occipital fasciculus (could be a part of anterior internal capsule) R,69,121,93,SFO,association,Superior fronto-occipital fasciculus,3,43
+57,Superior fronto-occipital fasciculus (could be a part of anterior internal capsule) L,110,121,93,SFO,association,Superior fronto-occipital fasciculus,3,44
+58,Inferior fronto-occipital fasciculus R,55,127,54,IFO,association,Inferior fronto-occipital fasciculus,3,45
+59,Inferior fronto-occipital fasciculus L,123,125,58,IFO,association,Inferior fronto-occipital fasciculus,3,46
+60,Uncinate fasciculus R,60,78,86,UNC,association,Uncinate fasciculus,3,47
+61,Uncinate fasciculus L,117,76,87,UNC,association,Uncinate fasciculus,3,48
+62,Unclassified,0,0,0,,unclassified,Unclassified,2,0
+63,global,,,,WM,global,White Matter,0,
+64,Unclassified,0,0,0,,unclassified,Unclassified,2,0
+65,core,,,,CWM,global,Core White Matter,1,1
+66,peripheral,,,,PWM,global,Peripheral White Matter,1,2
+67,Unclassified,0,0,0,,unclassified,Unclassified,2,0
+68,projection,,,,PT,core,Projection Tracts,2,1
+69,association,,,,AT,core,Association Tracts,2,2
+70,callosal,,,,CT,core,Callosal Tracts,2,3
+71,limbic,,,,LT,core,Limbic Tracts,2,4
+72,cerebellar,,,,CbT,core,Cerebellar Tracts,2,5

@@ -7,3 +7,18 @@ sans:
 saps:
   file: sessions
   field: saps_total
+smoke:
+  file: sessions
+  field: smoke
+cannabis:
+  file: sessions
+  field: cannabis
+cpz:
+  file: sessions
+  field: cpz
+doi:
+  file: sessions
+  field: doi
+date:
+  file: sessions
+  field: date

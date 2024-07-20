@@ -64,3 +64,6 @@ time:
 ddx:
   file: history
   field: ConsensusDx
+date:
+  file: sessions
+  field: date_scan

@@ -67,3 +67,6 @@ ddx:
 date:
   file: sessions
   field: date_scan
+cds:
+  file: cds
+  field: CDS_Total
